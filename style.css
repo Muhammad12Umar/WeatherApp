@@ -181,3 +181,34 @@ body {
   z-index: 10;
 
 }
+
+@media (max-width: 576px) {
+  .weather-card {
+    padding: 20px;
+  }
+
+  .temperature {
+    font-size: 56px;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search input,
+  .search button {
+    border-radius: 12px !important;
+    width: 100%;
+  }
+
+  .details {
+    grid-template-columns: 1fr; /* Stack details vertically */
+  }
+
+  .forecast {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
