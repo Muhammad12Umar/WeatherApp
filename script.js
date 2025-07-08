@@ -9,14 +9,14 @@ const pressure = document.querySelector(".Pressure");
 const uvIndex = document.querySelector(".UvIndex"); // Not used (see note below)
 
 // Set current date
-const showDate = new Date().toDateString();
-date.textContent = showDate;
 
 const apiKey = "ddfb704be1f2ba11251791a6a36882f0"; // Make sure no space at the end
 
 search.addEventListener("submit", function (event) {
   event.preventDefault();
-
+  const showDate = new Date().toDateString();
+  date.textContent = showDate;
+  
   const searchInput = event.target.searchInput.value.trim();
   if (!searchInput) {
     alert("Please Enter a city .");
@@ -38,7 +38,7 @@ function fetchWeather(city) {
     })
     .then((data) => {
       console.log(data)
-      temperatur.textContent = `${data.main.temp}°C`;
+      temperatur.textContent = `${data.main.temp}`;
       locationEl.textContent = data.name;
       condition.textContent = data.weather[0].description;
       humidity.textContent = `${data.main.humidity}%`;
